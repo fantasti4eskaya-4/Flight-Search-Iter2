@@ -1,0 +1,48 @@
+.result_content {
+    border: 1px solid #000000;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.block {
+    min-height: 250px;
+    height: auto;
+    width: 50vw;
+    background-color: #6c7dc7;
+    padding-left: 50px;
+    padding-top: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 1.2vw;
+    border-radius: 20px;
+}
+
+input {
+    border-radius: 20px;
+    margin: 5px 0 0 1vw;
+    width: auto;
+    text-align: center;
+    color: black;
+    min-width: 7vw;
+    height: 27px;
+}
+
+button {
+    width: 10%;
+    float: right;
+    width: 10vw;
+    height: 70px;
+    margin: 5px 0 0 1vw;
+    border-radius: 40px;
+    color: rgb(255, 255, 255);
+    background-color: green;
+    font-weight: bold;
+    font-size: 1.2vw;
+}
+
+body {
+    background-color: #b3b9c9;
+}

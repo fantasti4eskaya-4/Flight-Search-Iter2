@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="/static/showFunctions.js"></script>
+<script src="/static/showFunctions.js"></script>
+<link rel="stylesheet" href="/static/styles.css">
+
+<body>
+<div>
+        <img src="/images/flght.png" style="width: 700px" onclick="alert('Ожидайте, с Вами свяжутся')"/>
+</div>
+
+<div class="block">
+    <div class="head" style="display: flex; text-align: center;">
+        <div id="geo" style="display: flex;">
+            <div id="from">
+                <label><p>Откуда</p></label><br>
+                <input type="text" id="geo_from" placeholder="Откуда">
+            </div>
+            <div id="to">
+                <label><p>Куда</p></label><br>
+                <input type="text" id="geo_to" placeholder="Куда">
+            </div>
+
+        </div>
+
+        <div id="date" style="display: flex; margin-left: 30px;">
+            <div id="from">
+                <label><p>Дата вылета</p></label><br>
+                <input type="date" id="date_from">
+            </div>
+            <div id="to">
+                <label><p>Дата обратно</p></label><br>
+                <input type="date" id="date_to">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="prehead" style="padding-left: 15px; width: 40vw;">
+        <div class="someInfo">
+            <button onclick="sendData()">Найти</button>
+            <div id="replace">
+                <label>Максимальное число пересадок:</label>
+                <input type="text" id="que_replace" placeholder="1">
+            </div>
+            <div id="cost">
+                <div>
+                    <label>Максимальная цена:</label>
+                </div>
+                <div>
+                    <input type="text" id="max_cost" placeholder="10000">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="search_result"></div>
+
+    <div style="bottom: 0;
+  margin-top: 25px;
+  width: 100%;
+color: #b3b9c9">Техническая поддержка, 8-999-431-09-23, fantasti4eskaya-4@mail.ru
+    </div>
+</div>
+
+
+</body>
+
+</html>
