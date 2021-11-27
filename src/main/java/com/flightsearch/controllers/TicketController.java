@@ -4,8 +4,6 @@ import com.flightsearch.TicketSearchAmadeusService;
 import com.flightsearch.data.Ticket;
 import com.flightsearch.exeptions.NoTicketThisDataException;
 import com.flightsearch.exeptions.WrongInputDataException;
-import com.flightsearch.utils.DataGenerator;
-import org.apache.tomcat.jni.Local;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
