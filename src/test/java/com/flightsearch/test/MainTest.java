@@ -10,7 +10,7 @@ public class MainTest {
     @Test
     public void CheckIATACode(){
         System.out.println("Тест прогнан");
-        if ("MOW".equals(DataGenerator.getIATA("Москва"))){
+        if (!"MOW".equals(DataGenerator.getIATA("Москва"))){
             fail("IATA code not matchs");
         }
     }
