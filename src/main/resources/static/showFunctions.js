@@ -80,7 +80,7 @@ window.onload = function () {
 
     let xhr = new XMLHttpRequest();
     let hostname = location.hostname;
-    xhr.open('POST', 'http://' + hostname + ':8088/load_cities', true);
+    xhr.open('POST', 'https://' + hostname + ':8088/load_cities', true);
     xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
     xhr.setRequestHeader('Access-Control-Allow-Methods', 'POST');
     xhr.setRequestHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -100,7 +100,7 @@ window.onload = function () {
 function sendData() {
     let xhr = new XMLHttpRequest();
     let hostname = location.hostname;
-    xhr.open('POST', 'http://' + hostname + ':8088/find_tickets', true);
+    xhr.open('POST', 'https://' + hostname + ':8088/find_tickets', true);
     xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
     xhr.setRequestHeader('Access-Control-Allow-Methods', 'POST');
     xhr.setRequestHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
