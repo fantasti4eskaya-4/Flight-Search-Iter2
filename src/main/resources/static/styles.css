@@ -46,3 +46,12 @@ button {
 body {
     background-color: #b3b9c9;
 }
+
+.input_data {
+    display: block;
+}
+
+td {
+    vertical-align: middle;
+    text-align: center;
+}

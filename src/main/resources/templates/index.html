@@ -3,67 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="/static/showFunctions.js"></script>
-<script src="/static/showFunctions.js"></script>
-<link rel="stylesheet" href="/static/styles.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 
 <body>
 <div>
-        <img src="/images/flght.png" style="width: 700px" onclick="alert('Ожидайте, с Вами свяжутся')"/>
+    <img src="/images/flght.png" style="width: 700px" onclick="alert('Ожидайте, с Вами свяжутся')"/>
 </div>
 
-<div class="block">
-    <div class="head" style="display: flex; text-align: center;">
-        <div id="geo" style="display: flex;">
-            <div id="from">
-                <label><p>Откуда</p></label><br>
-                <input type="text" id="geo_from" placeholder="Откуда">
-            </div>
-            <div id="to">
-                <label><p>Куда</p></label><br>
-                <input type="text" id="geo_to" placeholder="Куда">
-            </div>
-
-        </div>
-
-        <div id="date" style="display: flex; margin-left: 30px;">
-            <div id="from">
-                <label><p>Дата вылета</p></label><br>
-                <input type="date" id="date_from">
-            </div>
-            <div id="to">
-                <label><p>Дата обратно</p></label><br>
-                <input type="date" id="date_to">
-            </div>
-
-        </div>
+<div>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <span class="font-weight-bold">Откуда</span>
+                    <input class="input_data" type="text" id="geo_from" placeholder="Откуда">
+                </td>
+                <td>
+                    Куда
+                    <input class="input_data" type="text" id="geo_to" placeholder="Куда">
+                </td>
+                <td>
+                    Дата вылета
+                    <input class="input_data" type="date" id="date_from">
+                </td>
+                <td>
+                    Дата обратно
+                    <input class="input_data" type="date" id="date_to">
+                </td>
+            </tr>
+        </table>
     </div>
 
-    <div class="prehead" style="padding-left: 15px; width: 40vw;">
-        <div class="someInfo">
-            <button onclick="sendData()">Найти</button>
-            <div id="replace">
-                <label>Максимальное число пересадок:</label>
-                <input type="text" id="que_replace" placeholder="1">
-            </div>
-            <div id="cost">
-                <div>
-                    <label>Максимальная цена:</label>
-                </div>
-                <div>
+    <div style="margin-top: 1rem">
+        <table>
+            <tr>
+                <td class="input_data">
+                    Максимальное число пересадок:
+                </td>
+                <td>
+                    <input type="text" id="que_replace" placeholder="1">
+                </td>
+            </tr>
+            <tr>
+                <td class="input_data">
+                    Максимальная цена:
+                </td>
+                <td>
                     <input type="text" id="max_cost" placeholder="10000">
-                </div>
-            </div>
-        </div>
+                </td>
+            </tr>
+        </table>
+        <input type="button" value="FIND">
     </div>
 
     <div id="search_result"></div>
 
-    <div style="bottom: 0; margin-top: 25px; width: 100%; color: #b3b9c9">Техническая поддержка, 8-999-431-09-23, fantasti4eskaya-4@mail.ru</div>
+    <div style="bottom: 0; margin-top: 25px; width: 100%; color: #b3b9c9">Техническая поддержка, 8-999-431-09-23,
+        fantasti4eskaya-4@mail.ru
+    </div>
 </div>
 
 
