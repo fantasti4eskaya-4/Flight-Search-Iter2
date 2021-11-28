@@ -44,7 +44,7 @@ public class TicketSearchAmadeusService {
 
         JSONArray flightOffersSearch = new JSONArray();
         for (int i = 0; i < data.size(); i++) {
-            System.out.println(data.get(i));
+
             flightOffersSearch.add(data.get(i));
             if (flightOffersSearch.size() == 12)
                 break;
@@ -52,6 +52,7 @@ public class TicketSearchAmadeusService {
         if (flightOffersSearch.size() == 0) {
             throw new NoTicketThisDataException();
         }
+        System.out.println("Founded: " +flightOffersSearch.size() + " tickets");
         JSONObject pricePostBody = new JSONObject();
         JSONObject dataPrice = new JSONObject();
         dataPrice.put("type", "flight-offers-pricing");
@@ -70,8 +71,6 @@ public class TicketSearchAmadeusService {
         JSONObject priceRootData = (JSONObject) pricePostBody.get("data");
         JSONArray flightOffers = (JSONArray) priceRootData.get("flightOffers");
 
-        System.out.println("__");
-        System.out.println(flightOffers);
         List<Ticket[]> ticketList = new ArrayList<>();
         for (int i = 0; i < flightOffers.size(); i++) {
             JSONObject obj = (JSONObject) flightOffers.get(i);
