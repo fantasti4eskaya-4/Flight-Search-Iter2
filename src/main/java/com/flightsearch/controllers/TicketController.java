@@ -1,6 +1,7 @@
 package com.flightsearch.controllers;
 
 import com.flightsearch.TicketSearchAmadeusService;
+import com.flightsearch.dao.FlightSearchDAO;
 import com.flightsearch.data.Ticket;
 import com.flightsearch.exeptions.NoTicketThisDataException;
 import com.flightsearch.exeptions.WrongInputDataException;
@@ -29,12 +30,19 @@ import java.util.List;
 public class TicketController {
 
     private TicketSearchAmadeusService ticketSearch;
+    private FlightSearchDAO flightSearchDAO;
+
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     private List<String> citiesName;
 
     @Autowired
     public void setTicketSearchAmadeusService(TicketSearchAmadeusService ticketSearchAmadeusService) {
         this.ticketSearch = ticketSearchAmadeusService;
+    }
+
+    @Autowired
+    public void setFlightSearchDAO(FlightSearchDAO flightSearchDAO) {
+        this.flightSearchDAO = flightSearchDAO;
     }
 
     @RequestMapping(value = "/find_tickets", method = RequestMethod.POST)
@@ -53,23 +61,6 @@ public class TicketController {
 
     @RequestMapping(value = "/load_cities", method = RequestMethod.POST)
     public List<String> getCitiesNames() throws IOException, ParseException {
-        if (citiesName == null)
-            citiesName = new ArrayList<>();
-        if (citiesName.size() == 0) {
-            System.out.println("Start loading cities data");
-            URL url = new URL("http://api.travelpayouts.com/data/ru/cities.json");
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            InputStream inputStream = connection.getInputStream();
-
-            JSONParser jsonParser = new JSONParser();
-            JSONArray root = (JSONArray) jsonParser.parse(new InputStreamReader(inputStream));
-
-            for (int i = 0; i < root.size(); i++) {
-                JSONObject cityData = (JSONObject) root.get(i);
-                String name = (String) cityData.get("name");
-                citiesName.add(name);
-            }
-        }
-        return citiesName;
+        return flightSearchDAO.getCityNames();
     }
 }
